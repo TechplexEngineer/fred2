@@ -30,6 +30,8 @@ public class RobotMap {
     public static RobotDrive driveDrivetrain;
     public static SpeedController driveStrafe;
     public static Gyro drivegyro;
+    public static Encoder driveLeftEncoder;
+    public static Encoder driveRightEncoder;
     public static DoubleSolenoid liftPusher;
     public static SpeedController liftLift;
     public static DigitalInput liftTopLimit;
@@ -66,6 +68,14 @@ public class RobotMap {
         drivegyro = new Gyro(0);
         LiveWindow.addSensor("Drive", "gyro", drivegyro);
         drivegyro.setSensitivity(0.007);
+        driveLeftEncoder = new Encoder(0, 1, false, EncodingType.k4X);
+        LiveWindow.addSensor("Drive", "LeftEncoder", driveLeftEncoder);
+        driveLeftEncoder.setDistancePerPulse(1.0);
+        driveLeftEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
+        driveRightEncoder = new Encoder(2, 3, false, EncodingType.k4X);
+        LiveWindow.addSensor("Drive", "RightEncoder", driveRightEncoder);
+        driveRightEncoder.setDistancePerPulse(1.0);
+        driveRightEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
         liftPusher = new DoubleSolenoid(0, 0, 1);      
         LiveWindow.addActuator("Lift", "Pusher", liftPusher);
         
