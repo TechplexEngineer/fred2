@@ -40,11 +40,11 @@ public class  LiftControl extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
 //    	System.out.println(Robot.oi.getLeftTrigger()+"|"+Robot.oi.getRightTrigger());
-    	if (Robot.oi.getLeftTrigger() > DEADBAND) {
-    		Robot.lift.moveLift(-Robot.oi.getLeftTrigger());
-    	} else if (Robot.oi.getRightTrigger() > DEADBAND) {
+    	if (Robot.oi.getRightTrigger() > DEADBAND) {
+    		Robot.lift.moveLift(-Robot.oi.getRightTrigger());
+    	} else if (Robot.oi.getLeftTrigger() > DEADBAND) {
     		System.out.println("right");
-    		Robot.lift.moveLift(Robot.oi.getRightTrigger());
+    		Robot.lift.moveLift(Robot.oi.getLeftTrigger());
     	} else {
     		Robot.lift.moveLift(0);
     	}
