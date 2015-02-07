@@ -65,6 +65,15 @@ public class Drive extends Subsystem {
     	return deadzone(input, .2);
     }
     
+    //when the robot resets clear the gyro error
+    public void resetGyro() {
+    	System.out.println("Resetting Gyro");
+    	gyro.reset();
+    	prevTurn = 0;
+    	targetHeading = 0;
+    	error = 0;
+    }
+    
     private double prevTurn = 0;
     private double targetHeading = 0;
     private double error = 0;
