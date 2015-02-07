@@ -33,10 +33,24 @@ public class  HDrive extends Command {
     protected void initialize() {
     	Robot.drive.resetGyro();
     }
+    private double map(double old_value, double old_top, double old_bottom, double new_top, double new_bottom) {
+    	return (old_value - old_bottom) / (old_top - old_bottom) * (new_top - new_bottom) + new_bottom;
+    }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drive.hDrive(Robot.oi.getDriver().getY()*.75, Robot.oi.getDriver().getZ()*.75, Robot.oi.getDriver().getX()*.75);
+    	
+    	double throttle = Robot.oi.getDriver().getThrottle();
+    	
+    	throttle = map(throttle, -1, 1, 1, .25);
+    	double factor = .75 * throttle;
+    	double drive = Robot.oi.getDriver().getY()*factor;
+    	double turn = Robot.oi.getDriver().getZ()*factor;
+    	double slide = Robot.oi.getDriver().getX()*factor;
+    	
+    	
+    	Robot.drive.hDrive(drive, turn, slide);
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
