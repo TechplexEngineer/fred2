@@ -30,6 +30,7 @@ public class RobotMap {
     public static SpeedController driveRightRear;
     public static RobotDrive driveDrivetrain;
     public static SpeedController driveStrafe;
+    public static Gyro drivegyro;
     public static DoubleSolenoid liftPusher;
     public static SpeedController liftLift;
     public static DigitalInput liftTopLimit;
@@ -62,6 +63,9 @@ public class RobotMap {
         driveStrafe = new Talon(4);
         LiveWindow.addActuator("Drive", "Strafe", (Talon) driveStrafe);
         
+        drivegyro = new Gyro(0);
+        LiveWindow.addSensor("Drive", "gyro", drivegyro);
+        drivegyro.setSensitivity(0.007);
         liftPusher = new DoubleSolenoid(0, 0, 1);      
         LiveWindow.addActuator("Lift", "Pusher", liftPusher);
         

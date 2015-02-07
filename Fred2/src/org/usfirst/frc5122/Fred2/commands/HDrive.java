@@ -35,7 +35,7 @@ public class  HDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drive.HDrive(Robot.oi.getDriver().getY()*.75, Robot.oi.getDriver().getZ()*.75, Robot.oi.getDriver().getX()*.75);
+    	Robot.drive.hDrive(Robot.oi.getDriver().getY()*.75, Robot.oi.getDriver().getZ()*.75, Robot.oi.getDriver().getX()*.75);
     }
 
     // Make this return true when this Command no longer needs to run execute()
