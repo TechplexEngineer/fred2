@@ -41,7 +41,15 @@ public class auto_3totes extends CommandGroup {
     	addSequential(new a_grabber_grab());
     	addParallel(new a_lift_move_time(2.5, 1));
     	//we have picked up a tote
+    	addSequential(new a_drive_turn_angle(45));
     	addSequential(new a_drive_move_dist(45));
+    	addSequential(new a_drive_turn_angle(-45));
+    	// now we are parallel to recycling container
+    	addSequential(new a_drive_move_dist(12));
+    	addSequential(new a_drive_turn_angle(-45));
+    	addSequential(new a_drive_move_dist(45));
+    	addSequential(new a_drive_turn_angle(45));
+    	//Should be ready to pickup the next tote
     	
     	
     }
