@@ -79,7 +79,7 @@ public class  a_drive_move_dist extends PIDCommand {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	System.out.println("EXEC");
+    	System.out.println("EXEC a_drive_move_dist");
     }
 
     // Make this return true when this Command no longer needs to run execute()

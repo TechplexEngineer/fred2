@@ -54,11 +54,11 @@ public class auto_3totes extends CommandGroup {
     	addSequential(new a_drive_turn_angle(-45), 2.5);
     	addSequential(new a_debug("----8----"));
     	// now we are parallel to recycling container
-    	addSequential(new a_drive_move_dist(15));
+    	addSequential(new a_drive_move_dist(15), 1.5);
     	addSequential(new a_debug("----9----"));
     	addSequential(new a_drive_turn_angle(-45), 2.5);
     	addSequential(new a_debug("----10----"));
-    	addSequential(new a_drive_move_dist(35));
+    	addSequential(new a_drive_move_dist(35), 1.5);
     	addSequential(new a_debug("----11----"));
     	addSequential(new a_drive_turn_angle(45), 2.5);
     	addSequential(new a_debug("----Done----"));

@@ -12,6 +12,7 @@
 package org.usfirst.frc5122.Fred2.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc5122.Fred2.Robot;
 
 /**
@@ -38,6 +39,7 @@ public class  a_lift_move_time extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	starting = timeSinceInitialized();
+    	System.out.println("INIT a_lift_move_time");
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -54,6 +56,7 @@ public class  a_lift_move_time extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	Robot.lift.stop();
+    	System.out.println("END a_lift_move_time");
     }
 
     // Called when another command which requires one or more of the same

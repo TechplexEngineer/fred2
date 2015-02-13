@@ -33,7 +33,7 @@ public class  a_grabber_ungrab extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.toteGrabber.ungrab();
-    	System.out.println("GRAB");
+    	System.out.println("unGRAB");
     }
 
     // Called repeatedly when this Command is scheduled to run

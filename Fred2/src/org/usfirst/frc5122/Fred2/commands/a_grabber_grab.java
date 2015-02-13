@@ -32,6 +32,7 @@ public class  a_grabber_grab extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.toteGrabber.grab();
+    	System.out.println("GRAB");
     }
 
     // Called repeatedly when this Command is scheduled to run
