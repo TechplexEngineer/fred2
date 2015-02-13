@@ -12,6 +12,7 @@
 package org.usfirst.frc5122.Fred2.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc5122.Fred2.Robot;
 
 /**
@@ -31,16 +32,20 @@ public class  a_lift_bottom extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	System.out.println("INIT a_lift_bottom");
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.lift.moveLift(-1);
+    	System.out.println("EXEC a_lift_bottom");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.lift.isAtBottom();
+    	boolean done = Robot.lift.isAtBottom();
+    	System.out.println("IsFini "+done);
+        return done;
     }
 
     // Called once after isFinished returns true

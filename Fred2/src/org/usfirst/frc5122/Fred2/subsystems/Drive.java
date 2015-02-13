@@ -129,5 +129,8 @@ public class Drive extends Subsystem {
     public double rightDistance() {
     	return rightEncoder.getDistance();
     }
+    public double getGyroAngle() {
+    	return gyro.getAngle();
+    }
 }
 

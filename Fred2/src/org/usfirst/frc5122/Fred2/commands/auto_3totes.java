@@ -35,20 +35,33 @@ public class auto_3totes extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	
+    	addSequential(new a_debug("Starting"));
     	addSequential(new a_drive_move_time(.25, .5));
+    	addSequential(new a_debug("----1----"));
     	addSequential(new a_grabber_ungrab());
+    	addSequential(new a_debug("----2----"));
     	addSequential(new a_lift_bottom());
+    	addSequential(new a_debug("----3----"));
     	addSequential(new a_grabber_grab());
+    	addSequential(new a_debug("----4----"));
     	addParallel(new a_lift_move_time(2.5, 1));
+    	addSequential(new a_debug("----5----"));
     	//we have picked up a tote
-    	addSequential(new a_drive_turn_angle(45));
-    	addSequential(new a_drive_move_dist(45));
-    	addSequential(new a_drive_turn_angle(-45));
+    	addSequential(new a_drive_turn_angle(45), 2.5);
+    	addSequential(new a_debug("----6----"));
+    	addSequential(new a_drive_move_dist(40), 1.5);
+    	addSequential(new a_debug("----7----"));
+    	addSequential(new a_drive_turn_angle(-45), 2.5);
+    	addSequential(new a_debug("----8----"));
     	// now we are parallel to recycling container
-    	addSequential(new a_drive_move_dist(12));
-    	addSequential(new a_drive_turn_angle(-45));
-    	addSequential(new a_drive_move_dist(45));
-    	addSequential(new a_drive_turn_angle(45));
+    	addSequential(new a_drive_move_dist(15));
+    	addSequential(new a_debug("----9----"));
+    	addSequential(new a_drive_turn_angle(-45), 2.5);
+    	addSequential(new a_debug("----10----"));
+    	addSequential(new a_drive_move_dist(35));
+    	addSequential(new a_debug("----11----"));
+    	addSequential(new a_drive_turn_angle(45), 2.5);
+    	addSequential(new a_debug("----Done----"));
     	//Should be ready to pickup the next tote
     	
     	

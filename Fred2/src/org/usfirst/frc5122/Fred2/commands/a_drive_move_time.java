@@ -12,6 +12,7 @@
 package org.usfirst.frc5122.Fred2.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc5122.Fred2.Robot;
 
 /**
@@ -38,26 +39,32 @@ public class  a_drive_move_time extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	starting = timeSinceInitialized();
+    	System.out.println("INIT a_drive_move_time");
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.drive.HDrive(-speed, 0, 0);
+    	System.out.println("EXEC a_drive_move_time ");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return timeSinceInitialized() >  (starting+duration);
+    	boolean done = timeSinceInitialized() >  (starting+duration);
+    	System.out.println("IsFini "+done);
+        return done;
     }
 
     // Called once after isFinished returns true
     protected void end() {
     	Robot.drive.stop();
+    	System.out.println("END a_drive_move_time ");
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	System.out.println("INT");
     	end();
     }
 }
