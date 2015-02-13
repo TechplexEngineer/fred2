@@ -12,14 +12,17 @@
 package org.usfirst.frc5122.Fred2.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc5122.Fred2.Robot;
 
 /**
  *
  */
-public class  TotePusher extends Command {
+public class  oi_Lift extends Command {
+	
+	private final double DEADBAND = .05;
 
-    public TotePusher() {
+    public oi_Lift() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -31,11 +34,23 @@ public class  TotePusher extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.lift.push();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	if (Robot.oi.getXbox().getRightTrigger() > DEADBAND || Robot.oi.getXbox().isRB()) {
+    		Robot.lift.moveLift(-Robot.oi.getXbox().getRightTrigger());
+    	} else if (Robot.oi.getXbox().getLeftTrigger() > DEADBAND || Robot.oi.getXbox().isLB()) {
+    		System.out.println("right");
+    		Robot.lift.moveLift(Robot.oi.getXbox().getLeftTrigger());
+    	} else {
+    		Robot.lift.moveLift(0);
+    	}
+    	if ((Robot.oi.getXbox().getRightStickY()*-1) > DEADBAND || Robot.oi.getXbox().isA()) {
+    		Robot.lift.push();
+    	} else {
+    		Robot.lift.unpush();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -45,7 +60,7 @@ public class  TotePusher extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.lift.unpush();
+    	Robot.lift.moveLift(0);
     }
 
     // Called when another command which requires one or more of the same
