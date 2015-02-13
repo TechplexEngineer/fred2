@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class Auto1 extends CommandGroup {
+public class auto_3totes extends CommandGroup {
     
-    public  Auto1() {
+    public  auto_3totes() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -34,5 +34,15 @@ public class Auto1 extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    	
+    	addSequential(new a_drive_move_time(.25, .5));
+    	addSequential(new a_grabber_ungrab());
+    	addSequential(new a_lift_bottom());
+    	addSequential(new a_grabber_grab());
+    	addParallel(new a_lift_move_time(2.5, 1));
+    	//we have picked up a tote
+    	addSequential(new a_drive_move_dist(45));
+    	
+    	
     }
 }

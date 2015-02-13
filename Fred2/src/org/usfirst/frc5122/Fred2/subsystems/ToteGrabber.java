@@ -42,10 +42,10 @@ public class ToteGrabber extends Subsystem {
     	toteGripper.set(grab);
     }
     public void grab() {
-    	grab(true);
+    	grab(false);
     }
     public void ungrab() {
-    	grab(false);
+    	grab(true);
     }
 }
 

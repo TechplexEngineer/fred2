@@ -122,5 +122,12 @@ public class Drive extends Subsystem {
     	// Drive
     	HDrive(drive, turn, slide);
     }
+    
+    public double leftDistance() {
+    	return leftEncoder.getDistance();
+    }
+    public double rightDistance() {
+    	return rightEncoder.getDistance();
+    }
 }
 
