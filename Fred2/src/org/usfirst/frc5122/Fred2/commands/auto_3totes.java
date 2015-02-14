@@ -61,8 +61,8 @@ public class auto_3totes extends CommandGroup {
     	addSequential(new a_drive_move_dist(35), 1.5);
     	addSequential(new a_debug("----11----"));
     	addSequential(new a_drive_turn_angle(45), 2.5);
-    	addSequential(new a_debug("----12----"));
-    	addSequential(new a_drive_strafe_dist(12, .5));
+//    	addSequential(new a_debug("----12----"));
+//    	addSequential(new a_drive_strafe_dist(12, .5));
     	addSequential(new a_debug("----Done----"));
     	//Should be ready to pickup the next tote
     	

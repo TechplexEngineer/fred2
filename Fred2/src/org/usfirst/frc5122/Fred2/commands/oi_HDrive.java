@@ -12,6 +12,8 @@
 package org.usfirst.frc5122.Fred2.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc5122.Fred2.Robot;
 
 /**
@@ -43,12 +45,12 @@ public class  oi_HDrive extends Command {
     	double throttle = Robot.oi.getDriver().getThrottle();
     	
     	throttle = map(throttle, -1, 1, 1, .25);
-    	double factor = throttle;
+    	double factor = throttle*.8;
     	double drive = Robot.oi.getDriver().getY()*factor;
     	double turn = Robot.oi.getDriver().getZ()*factor;
     	double slide = Robot.oi.getDriver().getX()*factor;
     	
-    	
+    	SmartDashboard.putNumber("JS",	drive);
     	Robot.drive.hDrive(drive, turn, slide);
     	
     }
