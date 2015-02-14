@@ -38,6 +38,7 @@ public class RobotMap {
     public static DigitalInput liftBottomLimit;
     public static SpeedController liftLiftCim;
     public static Encoder liftLiftEncoder;
+    public static Solenoid grabberLight;
     public static Solenoid grabberToteGripper;
     public static DoubleSolenoid grabberPusher;
 
@@ -95,6 +96,9 @@ public class RobotMap {
         LiveWindow.addSensor("Lift", "LiftEncoder", liftLiftEncoder);
         liftLiftEncoder.setDistancePerPulse(0.05235987755982989);
         liftLiftEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
+        grabberLight = new Solenoid(0, 7);
+        LiveWindow.addActuator("Grabber", "Light", grabberLight);
+        
         grabberToteGripper = new Solenoid(0, 2);
         LiveWindow.addActuator("Grabber", "ToteGripper", grabberToteGripper);
         

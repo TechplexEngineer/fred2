@@ -55,7 +55,11 @@ public class  oi_Grabber extends Command {
         		Robot.grabber.unpush();
         	}
     	}
+    	
+    	Robot.grabber.light(Robot.oi.getXbox().isY());
     }
+    
+    
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

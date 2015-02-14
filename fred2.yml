@@ -312,17 +312,33 @@ Children:
     - Children: []
       Properties:
         Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['0', '1', '2', '3', '4', '5', '6', '7']
+          choices: &id010 ['0', '1', '2', '3', '4', '5', '6', '7']
           default: '0'
           name: Output Channel (Solenoid)
-          validators: [Solenoid]
-          value: '2'
+          validators: &id011 [Solenoid]
+          value: '7'
         Output PCM (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
-            '12', '13', '14', '15', '16', '17', '18', '19', '20']
+          choices: &id012 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+            '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']
           default: '0'
           name: Output PCM (Solenoid)
-          validators: [Solenoid]
+          validators: &id013 [Solenoid]
+          value: '0'
+      Base: Solenoid
+      Name: Light
+    - Children: []
+      Properties:
+        Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id010
+          default: '0'
+          name: Output Channel (Solenoid)
+          validators: *id011
+          value: '2'
+        Output PCM (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id012
+          default: '0'
+          name: Output PCM (Solenoid)
+          validators: *id013
           value: '0'
       Base: Solenoid
       Name: ToteGripper
@@ -368,20 +384,20 @@ Children:
   - Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id010 ['0', '1', '2', '3', '4', '5']
+        choices: &id014 ['0', '1', '2', '3', '4', '5']
         default: 1
         name: Number
-        validators: &id011 [Joystick]
+        validators: &id015 [Joystick]
         value: '0'
     Base: Joystick
     Name: Driver
   - Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id010
+        choices: *id014
         default: 1
         name: Number
-        validators: *id011
+        validators: *id015
         value: '1'
     Base: Joystick
     Name: Aux
@@ -445,7 +461,7 @@ Children:
         default: None
         name: Input
         type: PIDSource
-        validators: &id012 [TypeDropdownSelected]
+        validators: &id016 [TypeDropdownSelected]
         value: Drive gyro
       Limit Output: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Limit Output, validators: null, value: false}
@@ -463,7 +479,7 @@ Children:
         default: None
         name: Output
         type: PIDOutput
-        validators: &id013 [TypeDropdownSelected]
+        validators: &id017 [TypeDropdownSelected]
         value: Drive LeftFront
       Minimum Input: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: Minimum Input,
         validators: null, value: 0.0}
@@ -497,7 +513,7 @@ Children:
         default: None
         name: Input
         type: PIDSource
-        validators: *id012
+        validators: *id016
         value: Drive LeftEncoder
       Limit Output: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Limit Output, validators: null, value: false}
@@ -515,7 +531,7 @@ Children:
         default: None
         name: Output
         type: PIDOutput
-        validators: *id013
+        validators: *id017
         value: Drive LeftFront
       Minimum Input: !!robotbuilder.data.properties.DoubleProperty {default: 0, name: Minimum Input,
         validators: null, value: 0.0}
