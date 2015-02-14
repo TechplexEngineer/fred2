@@ -33,6 +33,7 @@ public class RobotMap {
     public static Gyro drivegyro;
     public static Encoder driveLeftEncoder;
     public static Encoder driveRightEncoder;
+    public static Encoder driveHdriveEncoder;
     public static SpeedController liftLift;
     public static DigitalInput liftTopLimit;
     public static DigitalInput liftBottomLimit;
@@ -80,6 +81,10 @@ public class RobotMap {
         LiveWindow.addSensor("Drive", "RightEncoder", driveRightEncoder);
         driveRightEncoder.setDistancePerPulse(0.05235987755982989);
         driveRightEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
+        driveHdriveEncoder = new Encoder(8, 9, false, EncodingType.k4X);
+        LiveWindow.addSensor("Drive", "HdriveEncoder", driveHdriveEncoder);
+        driveHdriveEncoder.setDistancePerPulse(0.05235987755982989);
+        driveHdriveEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
         liftLift = new Talon(5);
         LiveWindow.addActuator("Lift", "Lift", (Talon) liftLift);
         
@@ -94,7 +99,7 @@ public class RobotMap {
         
         liftLiftEncoder = new Encoder(6, 7, false, EncodingType.k4X);
         LiveWindow.addSensor("Lift", "LiftEncoder", liftLiftEncoder);
-        liftLiftEncoder.setDistancePerPulse(0.05235987755982989);
+        liftLiftEncoder.setDistancePerPulse(0.0114583333333333);
         liftLiftEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
         grabberLight = new Solenoid(0, 7);
         LiveWindow.addActuator("Grabber", "Light", grabberLight);

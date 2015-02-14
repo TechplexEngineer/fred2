@@ -44,7 +44,7 @@ public class auto_3totes extends CommandGroup {
     	addSequential(new a_debug("----3----"));
     	addSequential(new a_grabber_grab());
     	addSequential(new a_debug("----4----"));
-    	addParallel(new a_lift_move_time(2.5, 1));
+    	addParallel(new a_lift_move_time(1.25, 1));
     	addSequential(new a_debug("----5----"));
     	//we have picked up a tote
     	addSequential(new a_drive_turn_angle(45), 2.5);
@@ -61,6 +61,8 @@ public class auto_3totes extends CommandGroup {
     	addSequential(new a_drive_move_dist(35), 1.5);
     	addSequential(new a_debug("----11----"));
     	addSequential(new a_drive_turn_angle(45), 2.5);
+    	addSequential(new a_debug("----12----"));
+    	addSequential(new a_drive_strafe_dist(12, .5));
     	addSequential(new a_debug("----Done----"));
     	//Should be ready to pickup the next tote
     	

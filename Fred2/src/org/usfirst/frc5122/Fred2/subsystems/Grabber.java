@@ -70,13 +70,6 @@ public class Grabber extends Subsystem {
     public void light(boolean on){
     	light.set(on);
     }
-    
-    public void lightOn(){
-    	light(true);
-    }
-    public void lightOff() {
-    	light(false);
-    }
    
 }
 
