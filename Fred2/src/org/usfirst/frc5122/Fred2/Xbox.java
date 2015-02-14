@@ -2,41 +2,43 @@ package org.usfirst.frc5122.Fred2;
 
 import edu.wpi.first.wpilibj.Joystick;
 
-public class Xbox extends Joystick {
-
+public class Xbox {
+	private Joystick _joystick;
 	Xbox(int port) {
-		super(port);
+		_joystick = new Joystick(port);
 	}
- 
+	Xbox(Joystick js) {
+		_joystick = js;
+	}
 	public boolean isA() {
-		return getRawButton(0);
-	}
-	public boolean isB() {
 		return getRawButton(1);
 	}
-	public boolean isX() {
+	public boolean isB() {
 		return getRawButton(2);
 	}
-	public boolean isY() {
+	public boolean isX() {
 		return getRawButton(3);
 	}
-	public boolean isLB() {
+	public boolean isY() {
 		return getRawButton(4);
 	}
-	public boolean isRB() {
+	public boolean isLB() {
 		return getRawButton(5);
 	}
-	public boolean isBack() {
+	public boolean isRB() {
 		return getRawButton(6);
 	}
-	public boolean isStart() {
+	public boolean isBack() {
 		return getRawButton(7);
 	}
-	public boolean isLeftStick() {
+	public boolean isStart() {
 		return getRawButton(8);
 	}
-	public boolean isRightStick() {
+	public boolean isLeftStick() {
 		return getRawButton(9);
+	}
+	public boolean isRightStick() {
+		return getRawButton(10);
 	}
  
  
@@ -62,11 +64,11 @@ public class Xbox extends Joystick {
 		return getRawAxis(5);
 	}
  
-//	public double getRawButton(int button) {
-//		joystick_.getRawButton(button);
-//	}
-//	public double getAxisButton(int button) {
-//		joystick_.getAxisButton(button);
-//	}
+	public boolean getRawButton(int button) {
+		return _joystick.getRawButton(button);
+	}
+	public double getRawAxis(int axis) {
+		return _joystick.getRawAxis(axis);
+	}
  
 }

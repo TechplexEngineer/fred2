@@ -38,19 +38,24 @@ public class  oi_Lift extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (Robot.oi.getXbox().getRightTrigger() > DEADBAND || Robot.oi.getXbox().isRB()) {
+    	if ((Robot.oi.getXbox().getRightTrigger() > DEADBAND)) {
     		Robot.lift.moveLift(-Robot.oi.getXbox().getRightTrigger());
-    	} else if (Robot.oi.getXbox().getLeftTrigger() > DEADBAND || Robot.oi.getXbox().isLB()) {
-    		System.out.println("right");
+    	} 
+    	else if ((Robot.oi.getXbox().getLeftTrigger() > DEADBAND)) {
     		Robot.lift.moveLift(Robot.oi.getXbox().getLeftTrigger());
-    	} else {
+    	}
+    	else if (Robot.oi.getXbox().isRB()) {
+    		Robot.lift.moveLift(-1);
+    	}
+    	else if (Robot.oi.getXbox().isLB()) {
+    		Robot.lift.moveLift(1);
+    	}
+    	else 
+    	{
     		Robot.lift.moveLift(0);
     	}
-    	if ((Robot.oi.getXbox().getRightStickY()*-1) > DEADBAND || Robot.oi.getXbox().isA()) {
-    		Robot.lift.push();
-    	} else {
-    		Robot.lift.unpush();
-    	}
+    	
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
