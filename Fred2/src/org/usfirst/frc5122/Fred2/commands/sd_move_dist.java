@@ -21,6 +21,7 @@ import org.usfirst.frc5122.Fred2.Robot;
  */
 public class  sd_move_dist extends Command {
 	a_drive_move_dist moveCmd;
+	private a_drive_move_dist driveCmd;
     public sd_move_dist() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -34,14 +35,9 @@ public class  sd_move_dist extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	double dist = SmartDashboard.getNumber("DriveDistance");
-    	double p = SmartDashboard.getNumber("Drive kp");
-    	double i = SmartDashboard.getNumber("Drive ki");
-    	double d = SmartDashboard.getNumber("Drive kd");
-    	double max = SmartDashboard.getNumber("max");
-    	moveCmd = new a_drive_move_dist(dist, p, i, d, max);
-    	moveCmd.start();
-
+    	double distSD = SmartDashboard.getNumber("DriveDistance");  	
+    	a_drive_move_dist moveDrive = new a_drive_move_dist(distSD);
+    	moveDrive.start();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -50,7 +46,7 @@ public class  sd_move_dist extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return !moveCmd.isRunning();
+        return true;
     }
 
     // Called once after isFinished returns true

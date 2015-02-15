@@ -78,5 +78,8 @@ public class Lift extends Subsystem {
     public double getDistance() {
     	return liftEncoder.getDistance();
     }
+    public void reset() {
+    	liftEncoder.reset();
+    }
 }
 

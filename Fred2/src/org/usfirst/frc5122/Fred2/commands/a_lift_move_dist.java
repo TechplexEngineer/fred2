@@ -34,7 +34,7 @@ public class  a_lift_move_dist extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	starting = Robot.lift.getDistance();
+    	Robot.lift.reset();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -45,7 +45,7 @@ public class  a_lift_move_dist extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	// done if current distance is greater than the starting distance plus the amount to move
-        return Robot.lift.getDistance() > (starting+distance);
+        return Math.abs(Robot.lift.getDistance()) > Math.abs(distance);
     }
 
     // Called once after isFinished returns true

@@ -103,7 +103,10 @@ public class Robot extends IterativeRobot {
 
     public void teleopInit() {
     	
-    	
+    	SmartDashboard.putNumber("DriveDistance", 0);
+    	SmartDashboard.putNumber("TurnAngle",0);
+    	SmartDashboard.putNumber("StrafeDist",0);
+    	SmartDashboard.putNumber("MoveLiftDistance",0);
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove

@@ -34,36 +34,66 @@ public class auto_3totes extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	
-    	addSequential(new a_debug("Starting"));
-    	addSequential(new a_drive_move_time(.25, .5));
-    	addSequential(new a_debug("----1----"));
-    	addSequential(new a_grabber_ungrab());
-    	addSequential(new a_debug("----2----"));
+    	addSequential(new a_lift_move_dist(1));
+    	addSequential(new a_drive_turn_angle(40));
+    	addSequential(new a_drive_move_dist(24));
+    	addSequential(new a_drive_turn_angle(-25));
+    	addSequential(new a_drive_turn_angle(-25));
+    	addSequential(new a_drive_move_dist(36));
+    	addSequential(new a_lift_move_dist(13)); //lift up
+    	addSequential(new a_drive_move_dist(20));
+    	addSequential(new a_drive_turn_angle(25));
+    	addSequential(new a_drive_move_dist(12));
     	addSequential(new a_lift_bottom());
-    	addSequential(new a_debug("----3----"));
-    	addSequential(new a_grabber_grab());
-    	addSequential(new a_debug("----4----"));
-    	addParallel(new a_lift_move_time(1.25, 1));
-    	addSequential(new a_debug("----5----"));
+    	
+    	addSequential(new a_lift_move_dist(1));
+    	addSequential(new a_drive_turn_angle(40));
+    	addSequential(new a_drive_move_dist(24));
+    	addSequential(new a_drive_turn_angle(-25));
+    	addSequential(new a_drive_turn_angle(-25));
+    	addSequential(new a_drive_move_dist(36));
+    	addSequential(new a_lift_move_dist(13));
+    	addSequential(new a_drive_move_dist(12));
+    	addSequential(new a_drive_turn_angle(30));
+    	addSequential(new a_drive_move_dist(20));
+    	addSequential(new a_lift_bottom());
+    	
+    	addSequential(new a_lift_move_dist(1));
+    	addSequential(new a_drive_turn_angle(90));
+    	addSequential(new a_drive_move_dist(120));
+    	addSequential(new a_drive_turn_angle(90));
+    	addSequential(new a_lift_bottom());
+    	addSequential(new a_drive_move_dist(-40));
+    	
+//    	addSequential(new a_debug("Starting"));
+//    	addSequential(new a_drive_move_time(.25, .5));
+//    	addSequential(new a_debug("----1----"));
+//    	addSequential(new a_grabber_ungrab());
+//    	addSequential(new a_debug("----2----"));
+//    	addSequential(new a_lift_bottom());
+//    	addSequential(new a_debug("----3----"));
+//    	addSequential(new a_grabber_grab());
+//    	addSequential(new a_debug("----4----"));
+//    	addParallel(new a_lift_move_time(1.25, 1));
+//    	addSequential(new a_debug("----5----"));
     	//we have picked up a tote
-    	addSequential(new a_drive_turn_angle(45), 2.5);
-    	addSequential(new a_debug("----6----"));
-    	addSequential(new a_drive_move_dist(40), 1.5);
-    	addSequential(new a_debug("----7----"));
-    	addSequential(new a_drive_turn_angle(-45), 2.5);
-    	addSequential(new a_debug("----8----"));
+//    	addSequential(new a_drive_turn_angle(45), 2.5);
+//    	addSequential(new a_debug("----6----"));
+//    	addSequential(new a_drive_move_dist(40), 1.5);
+//    	addSequential(new a_debug("----7----"));
+//    	addSequential(new a_drive_turn_angle(-45), 2.5);
+//    	addSequential(new a_debug("----8----"));
     	// now we are parallel to recycling container
-    	addSequential(new a_drive_move_dist(15), 1.5);
-    	addSequential(new a_debug("----9----"));
-    	addSequential(new a_drive_turn_angle(-45), 2.5);
-    	addSequential(new a_debug("----10----"));
-    	addSequential(new a_drive_move_dist(35), 1.5);
-    	addSequential(new a_debug("----11----"));
-    	addSequential(new a_drive_turn_angle(45), 2.5);
+//    	addSequential(new a_drive_move_dist(15), 1.5);
+//    	addSequential(new a_debug("----9----"));
+//    	addSequential(new a_drive_turn_angle(-45), 2.5);
+//    	addSequential(new a_debug("----10----"));
+//    	addSequential(new a_drive_move_dist(35), 1.5);
+//    	addSequential(new a_debug("----11----"));
+//    	addSequential(new a_drive_turn_angle(45), 2.5);
 //    	addSequential(new a_debug("----12----"));
 //    	addSequential(new a_drive_strafe_dist(12, .5));
-    	addSequential(new a_debug("----Done----"));
+//    	addSequential(new a_debug("----Done----"));
     	//Should be ready to pickup the next tote
     	
     	
