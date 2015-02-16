@@ -34,20 +34,20 @@ public class auto_3totes extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	addParallel(new a_lift_move_dist(1));
-    	addSequential(new a_drive_turn_angle(40));
+    	addParallel(new a_lift_move_dist(1.5));
+    	addSequential(new a_drive_turn_angle(35));
     	addSequential(new a_drive_move_dist(24));
-    	addSequential(new a_drive_turn_angle(-55));
+    	addSequential(new a_drive_turn_angle(-50));
     	addParallel(new a_lift_move_dist(13)); //lift up
     	addSequential(new a_drive_move_dist(48));
     	addSequential(new a_drive_turn_angle(30));
     	addSequential(new a_drive_move_dist(24));
     	addSequential(new a_lift_bottom());
     	
-    	addParallel(new a_lift_move_dist(1));
-    	addSequential(new a_drive_turn_angle(40));
+    	addParallel(new a_lift_move_dist(1.5));
+    	addSequential(new a_drive_turn_angle(35));
     	addSequential(new a_drive_move_dist(24));
-    	addSequential(new a_drive_turn_angle(-55));
+    	addSequential(new a_drive_turn_angle(-50));
     	addParallel(new a_lift_move_dist(13)); //lift up
     	addSequential(new a_drive_move_dist(42));
     	addSequential(new a_drive_turn_angle(30));
@@ -55,8 +55,12 @@ public class auto_3totes extends CommandGroup {
     	addSequential(new a_lift_bottom());
     	
 //    	addParallel(new a_lift_move_dist(1));
-    	addSequential(new a_drive_turn_angle(90));
-    	addSequential(new a_drive_move_dist(110));
+    	addSequential(new a_drive_turn_angle(55));
+    	addParallel(new a_grabber_push());
+    	addSequential(new a_drive_move_dist(120));
+    	
+//    	addSequential(new a_drive_turn_angle(-30));
+    	addSequential(new a_drive_move_dist(-10));
     	
 //    	addSequential(new a_drive_turn_angle(40));
 //    	addSequential(new a_drive_move_dist(24));
