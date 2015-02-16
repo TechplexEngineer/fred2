@@ -13,9 +13,10 @@ package org.usfirst.frc5122.Fred2.subsystems;
 
 import org.usfirst.frc5122.Fred2.RobotMap;
 import org.usfirst.frc5122.Fred2.commands.*;
-import edu.wpi.first.wpilibj.*;
 
+import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -95,6 +96,7 @@ public class Drive extends Subsystem {
 
 
     	if (turn == 0 ) {
+    		
     		if (prevTurn != 0) {
     			targetHeading = heading;
     			prevTurn = 0;
@@ -103,6 +105,7 @@ public class Drive extends Subsystem {
     		
     		// Calculate PID
     		error = targetHeading - heading;
+    		SmartDashboard.putNumber("error", error);
     		if (error > 180) {
     			error = heading - (360 - targetHeading);
     		}
