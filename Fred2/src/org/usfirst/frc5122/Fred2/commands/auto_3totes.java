@@ -37,35 +37,58 @@ public class auto_3totes extends CommandGroup {
     	addParallel(new a_lift_move_dist(1));
     	addSequential(new a_drive_turn_angle(40));
     	addSequential(new a_drive_move_dist(24));
-    	addSequential(new a_drive_turn_angle(-25));
-    	addSequential(new a_drive_turn_angle(-25));
+    	addSequential(new a_drive_turn_angle(-55));
     	addParallel(new a_lift_move_dist(13)); //lift up
-    	addSequential(new a_drive_move_dist(36));
-    	
-    	addSequential(new a_drive_move_dist(20));
-    	addSequential(new a_drive_turn_angle(25));
-    	addSequential(new a_drive_move_dist(12));
-    	addSequential(new a_lift_bottom());
-    	
-    	addSequential(new a_lift_move_dist(1));
-    	addSequential(new a_drive_turn_angle(40));
-    	addSequential(new a_drive_move_dist(24));
-    	addSequential(new a_drive_turn_angle(-25));
-    	addSequential(new a_drive_turn_angle(-25));
-    	addParallel(new a_lift_move_dist(13));
-    	addSequential(new a_drive_move_dist(36));
-    	
-    	addSequential(new a_drive_move_dist(12));
+    	addSequential(new a_drive_move_dist(48));
     	addSequential(new a_drive_turn_angle(30));
-    	addSequential(new a_drive_move_dist(20));
+    	addSequential(new a_drive_move_dist(24));
     	addSequential(new a_lift_bottom());
     	
     	addParallel(new a_lift_move_dist(1));
+    	addSequential(new a_drive_turn_angle(40));
+    	addSequential(new a_drive_move_dist(24));
+    	addSequential(new a_drive_turn_angle(-55));
+    	addParallel(new a_lift_move_dist(13)); //lift up
+    	addSequential(new a_drive_move_dist(42));
+    	addSequential(new a_drive_turn_angle(30));
+    	addSequential(new a_drive_move_dist(24));
+    	addSequential(new a_lift_bottom());
+    	
+//    	addParallel(new a_lift_move_dist(1));
     	addSequential(new a_drive_turn_angle(90));
-    	addSequential(new a_drive_move_dist(120));
-    	addSequential(new a_drive_turn_angle(90));
-    	addParallel(new a_lift_bottom());
-    	addSequential(new a_drive_move_dist(-40));
+    	addSequential(new a_drive_move_dist(110));
+    	
+//    	addSequential(new a_drive_turn_angle(40));
+//    	addSequential(new a_drive_move_dist(24));
+//    	addSequential(new a_drive_turn_angle(-25));
+//    	addSequential(new a_drive_turn_angle(-25));
+//    	addParallel(new a_lift_move_dist(13)); //lift up
+//    	addSequential(new a_drive_move_dist(30));
+//    	
+//    	addSequential(new a_drive_move_dist(20));
+//    	addSequential(new a_drive_turn_angle(25));
+//    	addSequential(new a_drive_move_dist(12));
+//    	addSequential(new a_lift_bottom());
+//    	
+//    	addSequential(new a_lift_move_dist(1));
+//    	addSequential(new a_drive_turn_angle(40));
+//    	addSequential(new a_drive_move_dist(24));
+//    	addSequential(new a_drive_turn_angle(-25));
+//    	addSequential(new a_drive_turn_angle(-25));
+//    	addParallel(new a_lift_move_dist(13));
+//    	addSequential(new a_drive_move_dist(36));
+//    	
+//    	addSequential(new a_drive_move_dist(12));
+//    	addSequential(new a_drive_turn_angle(30));
+//    	addSequential(new a_drive_move_dist(20));
+//    	addSequential(new a_lift_bottom());
+//    	
+//    	addParallel(new a_lift_move_dist(1));
+//    	addSequential(new a_drive_turn_angle(90));
+//    	addSequential(new a_drive_move_dist(120));
+//    	addSequential(new a_drive_turn_angle(90));
+//    	addParallel(new a_lift_bottom());
+//    	addSequential(new a_drive_move_dist(-40));
     	
 //    	addSequential(new a_debug("Starting"));
 //    	addSequential(new a_drive_move_time(.25, .5));

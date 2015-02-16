@@ -122,6 +122,8 @@ public class Robot extends IterativeRobot {
 //    	SmartDashboard.putNumber("Right", Robot.drive.rightDistance());
     	SmartDashboard.putNumber("Gyro", Robot.drive.getGyroAngle());
         Scheduler.getInstance().run();
+        double current = RobotMap.pdp.getCurrent(14);
+        SmartDashboard.putNumber("Lift Current",  current);
     }
 
     /**

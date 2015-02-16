@@ -43,12 +43,11 @@ public class  sd_drive_turn_angle extends Command {
     	double angleSD = SmartDashboard.getNumber("TurnAngle");
     	a_drive_turn_angle turnAngle = new a_drive_turn_angle(angleSD);
     	turnAngle.start();
-//    	double angle = SmartDashboard.getNumber("angle");
 //    	double p 	= SmartDashboard.getNumber("kp");
 //    	double i 	= SmartDashboard.getNumber("ki");
 //    	double d 	= SmartDashboard.getNumber("kd");
 //    	double max = SmartDashboard.getNumber("Max Speed");
-//    	cmd = new a_drive_turn_angle(angle, p, i, d, max);
+//    	cmd = new a_drive_turn_angle(angleSD, p, i, d, max);
 //    	cmd.start();
     }
 

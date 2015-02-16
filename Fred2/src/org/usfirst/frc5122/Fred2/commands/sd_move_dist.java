@@ -20,8 +20,6 @@ import org.usfirst.frc5122.Fred2.Robot;
  *
  */
 public class  sd_move_dist extends Command {
-	a_drive_move_dist moveCmd;
-	private a_drive_move_dist driveCmd;
     public sd_move_dist() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

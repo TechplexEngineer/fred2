@@ -21,6 +21,7 @@ import org.usfirst.frc5122.Fred2.Robot;
 public class  oi_Lift extends Command {
 	
 	private final double DEADBAND = .05;
+	private final double FACTOR_DOWN = .75;
 
     public oi_Lift() {
         // Use requires() here to declare subsystem dependencies
@@ -39,13 +40,13 @@ public class  oi_Lift extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if ((Robot.oi.getXbox().getRightTrigger() > DEADBAND)) {
-    		Robot.lift.moveLift(-Robot.oi.getXbox().getRightTrigger());
+    		Robot.lift.moveLift(-Robot.oi.getXbox().getRightTrigger()*FACTOR_DOWN);
     	} 
     	else if ((Robot.oi.getXbox().getLeftTrigger() > DEADBAND)) {
     		Robot.lift.moveLift(Robot.oi.getXbox().getLeftTrigger());
     	}
     	else if (Robot.oi.getXbox().isRB()) {
-    		Robot.lift.moveLift(-1);
+    		Robot.lift.moveLift(-1*FACTOR_DOWN);
     	}
     	else if (Robot.oi.getXbox().isLB()) {
     		Robot.lift.moveLift(1);
