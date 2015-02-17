@@ -12,9 +12,11 @@
 package org.usfirst.frc5122.Fred2.subsystems;
 
 import org.usfirst.frc5122.Fred2.RobotMap;
-import org.usfirst.frc5122.Fred2.commands.*;
-import edu.wpi.first.wpilibj.*;
+import org.usfirst.frc5122.Fred2.commands.oi_Lift;
 
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 

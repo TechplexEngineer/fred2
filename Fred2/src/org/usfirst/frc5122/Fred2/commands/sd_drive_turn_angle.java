@@ -14,8 +14,6 @@ package org.usfirst.frc5122.Fred2.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc5122.Fred2.Robot;
-
 /**
  *
  */
@@ -40,16 +38,16 @@ public class  sd_drive_turn_angle extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	System.out.println("INIT");
+    	System.out.println("INIT SD");
     	double angleSD = SmartDashboard.getNumber("TurnAngle");
-    	a_drive_turn_angle turnAngle = new a_drive_turn_angle(angleSD);
+//    	a_drive_turn_angle turnAngle = new a_drive_turn_angle(angleSD);
 //    	turnAngle.start();
-//    	double p 	= SmartDashboard.getNumber("kp");
-//    	double i 	= SmartDashboard.getNumber("ki");
-//    	double d 	= SmartDashboard.getNumber("kd");
-//    	double max = SmartDashboard.getNumber("Max Speed");
-//    	cmd = new a_drive_turn_angle(angleSD, p, i, d, max);
-//    	cmd.start();
+    	double p 	= SmartDashboard.getNumber("kp");
+    	double i 	= SmartDashboard.getNumber("ki");
+    	double d 	= SmartDashboard.getNumber("kd");
+    	double max = SmartDashboard.getNumber("Max Speed");
+    	cmd = new a_drive_turn_angle(angleSD, p, i, d, max, true);
+    	cmd.start();
     }
 
     // Called repeatedly when this Command is scheduled to run

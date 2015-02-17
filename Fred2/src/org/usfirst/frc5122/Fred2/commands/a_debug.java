@@ -12,7 +12,6 @@
 package org.usfirst.frc5122.Fred2.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc5122.Fred2.Robot;
 
 /**
  *

@@ -38,18 +38,18 @@ public class auto_3totes extends CommandGroup {
     	addSequential(new a_drive_turn_angle(35));
     	addSequential(new a_drive_move_dist(24));
     	addSequential(new a_drive_turn_angle(-50));
-    	addParallel(new a_lift_move_dist(13)); //lift up
-    	addSequential(new a_drive_move_dist(48));
-    	addSequential(new a_drive_turn_angle(30));
-    	addSequential(new a_drive_move_dist(24));
+    	addParallel(new a_lift_move_dist(14)); //lift up
+    	addSequential(new a_drive_move_dist(58));
+    	addSequential(new a_drive_turn_angle(20));
+    	addSequential(new a_drive_move_dist(14));
     	addSequential(new a_lift_bottom());
     	
     	addParallel(new a_lift_move_dist(1.5));
     	addSequential(new a_drive_turn_angle(35));
     	addSequential(new a_drive_move_dist(24));
     	addSequential(new a_drive_turn_angle(-50));
-    	addParallel(new a_lift_move_dist(13)); //lift up
-    	addSequential(new a_drive_move_dist(42));
+    	addParallel(new a_lift_move_dist(14)); //lift up
+    	addSequential(new a_drive_move_dist(58));
     	addSequential(new a_drive_turn_angle(30));
     	addSequential(new a_drive_move_dist(24));
     	addSequential(new a_lift_bottom());

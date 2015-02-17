@@ -11,11 +11,11 @@
 
 package org.usfirst.frc5122.Fred2.commands;
 
-import edu.wpi.first.wpilibj.command.PIDCommand;
-
 import org.usfirst.frc5122.Fred2.Robot;
 import org.usfirst.frc5122.Fred2.RobotMap;
 import org.usfirst.frc5122.Fred2.U;
+
+import edu.wpi.first.wpilibj.command.PIDCommand;
 
 /**
  *
@@ -39,7 +39,7 @@ public class  a_drive_move_dist extends PIDCommand {
 	}
     
     public a_drive_move_dist(double distance, double maxspeed) {
-    	this(distance, .075, 0, .6, maxspeed);
+    	this(distance, .078, 0, .6, maxspeed);
     }
     public a_drive_move_dist(double distance) {
     	this(distance, 1.0);
@@ -68,13 +68,15 @@ public class  a_drive_move_dist extends PIDCommand {
     		 output = output * (timeSinceInitialized()+.4);
     	}
     		
-    	Robot.drive.hDrive(-output, 0, 0);
+//    	Robot.drive.driveStraight(-output);
+    	Robot.drive.HDrive(-output, 0, 0);
     	System.out.println("PIDOUT: "+output);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     	RobotMap.driveLeftEncoder.reset();
+    	Robot.drive.resetGyro();
     	getPIDController().setSetpoint(distance);
     	getPIDController().enable();
     	System.out.println("INIT "+U.className(this));

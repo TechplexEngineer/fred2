@@ -11,10 +11,10 @@
 
 package org.usfirst.frc5122.Fred2.commands;
 
+import org.usfirst.frc5122.Fred2.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import org.usfirst.frc5122.Fred2.Robot;
 
 /**
  *

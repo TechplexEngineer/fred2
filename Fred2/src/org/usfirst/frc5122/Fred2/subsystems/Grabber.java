@@ -12,9 +12,9 @@
 package org.usfirst.frc5122.Fred2.subsystems;
 
 import org.usfirst.frc5122.Fred2.RobotMap;
-import org.usfirst.frc5122.Fred2.commands.*;
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 

@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class auto_rc_totenm3 extends CommandGroup {
+public class CommandGroup1 extends CommandGroup {
     
-    public  auto_rc_totenm3() {
+    public  CommandGroup1() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -34,20 +34,5 @@ public class auto_rc_totenm3 extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	double driveSpeed = .8;
-    	double liftSpeed = .75;
-    	double turnSpeed = .65;
-    	addSequential(new a_lift_move_dist(26, liftSpeed));		// pickup recycling container
-    	addSequential(new a_drive_move_dist(25, .5));			//drive
-//    	addSequential(new a_drive_turn_angle(10, .65, false),1); //correct driving
-    	addSequential(new a_drive_move_dist(6, driveSpeed));
-    	addSequential(new a_lift_bottom());						//pickup tote
-    	
-    	addSequential(new a_lift_move_dist(2, liftSpeed)); 		//lift up
-    	
-    	addSequential(new a_drive_turn_angle(45, .5), 1.5);
-    	addSequential(new a_drive_move_dist(-90, driveSpeed));
-    	addSequential(new a_drive_turn_angle(90, .5), 1.5);
-    	addSequential(new a_drive_move_dist(-80, driveSpeed));
     }
 }

@@ -11,11 +11,11 @@
 
 package org.usfirst.frc5122.Fred2.commands;
 
-import edu.wpi.first.wpilibj.command.PIDCommand;
-
 import org.usfirst.frc5122.Fred2.Robot;
 import org.usfirst.frc5122.Fred2.RobotMap;
 import org.usfirst.frc5122.Fred2.U;
+
+import edu.wpi.first.wpilibj.command.PIDCommand;
 
 /**
  *
