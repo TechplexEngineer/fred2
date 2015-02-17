@@ -47,7 +47,7 @@ public class auto_rc_totenm3 extends CommandGroup {
     	
     	addSequential(new a_drive_turn_angle(45, .5), 1.5);
     	addSequential(new a_drive_move_dist(-90, driveSpeed));
-    	addSequential(new a_drive_turn_angle(90, .5), 1.5);
+    	addSequential(new a_drive_turn_angle(90, .5), 2);
     	addSequential(new a_drive_move_dist(-80, driveSpeed));
     }
 }
