@@ -38,9 +38,9 @@ public class auto_rc_totenm3 extends CommandGroup {
     	double liftSpeed = .75;
     	double turnSpeed = .65;
     	addSequential(new a_lift_move_dist(26, liftSpeed));		// pickup recycling container
-    	addSequential(new a_drive_move_dist(25, .5));			//drive
+    	addSequential(new a_drive_move_dist(25, .6));			//drive
 //    	addSequential(new a_drive_turn_angle(10, .65, false),1); //correct driving
-    	addSequential(new a_drive_move_dist(6, driveSpeed));
+    	addSequential(new a_drive_move_dist(6, .9));
     	addSequential(new a_lift_bottom());						//pickup tote
     	
     	addSequential(new a_lift_move_dist(2, liftSpeed)); 		//lift up
