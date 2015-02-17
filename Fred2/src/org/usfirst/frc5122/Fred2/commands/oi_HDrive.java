@@ -46,7 +46,7 @@ public class  oi_HDrive extends Command {
     	throttle = map(throttle, -1, 1, 1, .25);
     	double factor = throttle*.8;
     	double drive = Robot.oi.getDriver().getY()*factor;
-    	double turn = Robot.oi.getDriver().getZ()*factor*.65;
+    	double turn = Robot.oi.getDriver().getZ()*factor*.8;
     	double slide = Robot.oi.getDriver().getX()*factor;
     	
 //    	SmartDashboard.putNumber("JS",	drive);

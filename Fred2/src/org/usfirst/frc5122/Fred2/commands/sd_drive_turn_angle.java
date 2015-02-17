@@ -34,20 +34,22 @@ public class  sd_drive_turn_angle extends Command {
     	SmartDashboard.putNumber("kd", 0.5);
     	SmartDashboard.putNumber("Max Speed", 1);
     	SmartDashboard.putNumber("angle",12);
+    	SmartDashboard.putNumber("TurnSpeed",.8);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     	System.out.println("INIT SD");
     	double angleSD = SmartDashboard.getNumber("TurnAngle");
-//    	a_drive_turn_angle turnAngle = new a_drive_turn_angle(angleSD);
-//    	turnAngle.start();
-    	double p 	= SmartDashboard.getNumber("kp");
-    	double i 	= SmartDashboard.getNumber("ki");
-    	double d 	= SmartDashboard.getNumber("kd");
-    	double max = SmartDashboard.getNumber("Max Speed");
-    	cmd = new a_drive_turn_angle(angleSD, p, i, d, max, true);
-    	cmd.start();
+    	double speed = SmartDashboard.getNumber("TurnSpeed");
+    	a_drive_turn_angle turnAngle = new a_drive_turn_angle(angleSD, speed);
+    	turnAngle.start();
+//    	double p 	= SmartDashboard.getNumber("kp");
+//    	double i 	= SmartDashboard.getNumber("ki");
+//    	double d 	= SmartDashboard.getNumber("kd");
+//    	double max = SmartDashboard.getNumber("Max Speed");
+//    	cmd = new a_drive_turn_angle(angleSD, p, i, d, max, true);
+//    	cmd.start();
     }
 
     // Called repeatedly when this Command is scheduled to run

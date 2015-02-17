@@ -11,13 +11,8 @@
 
 package org.usfirst.frc5122.Fred2;
 
-import org.usfirst.frc5122.Fred2.commands.auto_3totes;
-import org.usfirst.frc5122.Fred2.commands.auto_3totes_norc;
-import org.usfirst.frc5122.Fred2.commands.auto_rc_totenm3;
-import org.usfirst.frc5122.Fred2.commands.oi_Grabber;
-import org.usfirst.frc5122.Fred2.subsystems.Drive;
-import org.usfirst.frc5122.Fred2.subsystems.Grabber;
-import org.usfirst.frc5122.Fred2.subsystems.Lift;
+import org.usfirst.frc5122.Fred2.commands.*;
+import org.usfirst.frc5122.Fred2.subsystems.*;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -84,6 +79,11 @@ public class Robot extends IterativeRobot {
         autoChooser.addDefault("Default Auto - auto_3totes", new auto_3totes());
         autoChooser.addObject("auto_3totes_norc", new auto_3totes_norc());
         autoChooser.addObject("auto_rc_totenm3", new auto_rc_totenm3());
+        autoChooser.addObject("auto_1tote_pos3", new auto_1tote_pos3());
+        autoChooser.addObject("auto_1tote_pos2", new auto_1tote_pos2());
+        autoChooser.addObject("auto_1tote_pos1_lm", new auto_1tote_pos1());
+        autoChooser.addObject("auto_1tote_pos1_lm2", new auto_1tote_pos1_lm2());
+        autoChooser.addObject("auto_2tote_pos1", new auto_2tote_pos1());
         SmartDashboard.putData("Auto Chooser", autoChooser);
     }
 

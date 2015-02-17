@@ -21,7 +21,8 @@ import edu.wpi.first.wpilibj.command.Command;
 public class  oi_Lift extends Command {
 	
 	private final double DEADBAND = .05;
-	private final double FACTOR_DOWN = .75;
+	private final double FACTOR_DOWN = .65;
+	private final double FACTOR_UP = .75;
 
     public oi_Lift() {
         // Use requires() here to declare subsystem dependencies
@@ -43,13 +44,13 @@ public class  oi_Lift extends Command {
     		Robot.lift.moveLift(-Robot.oi.getXbox().getRightTrigger()*FACTOR_DOWN);
     	} 
     	else if ((Robot.oi.getXbox().getLeftTrigger() > DEADBAND)) {
-    		Robot.lift.moveLift(Robot.oi.getXbox().getLeftTrigger());
+    		Robot.lift.moveLift(Robot.oi.getXbox().getLeftTrigger()*FACTOR_UP);
     	}
     	else if (Robot.oi.getXbox().isRB()) {
     		Robot.lift.moveLift(-1*FACTOR_DOWN);
     	}
     	else if (Robot.oi.getXbox().isLB()) {
-    		Robot.lift.moveLift(1);
+    		Robot.lift.moveLift(1*FACTOR_UP);
     	}
     	else 
     	{
