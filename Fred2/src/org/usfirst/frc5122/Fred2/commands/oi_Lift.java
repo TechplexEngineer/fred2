@@ -22,7 +22,7 @@ public class  oi_Lift extends Command {
 	
 	private final double DEADBAND = .05;
 	private final double FACTOR_DOWN = .65;
-	private final double FACTOR_UP = .75;
+	private final double FACTOR_UP = .85;
 
     public oi_Lift() {
         // Use requires() here to declare subsystem dependencies

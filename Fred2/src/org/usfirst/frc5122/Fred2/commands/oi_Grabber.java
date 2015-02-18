@@ -57,7 +57,11 @@ public class  oi_Grabber extends Command {
         	}
     	}
     	
-    	Robot.grabber.light(Robot.oi.getXbox().isY() || Robot.oi.getDriver().getRawButton(1));
+    	if ((Robot.oi.getXbox().isY() || Robot.oi.getDriver().getRawButton(1))){
+    		Robot.grabber.topLights(true);
+    	} else {
+    		Robot.grabber.topLights(false);
+    	};
     }
     
     

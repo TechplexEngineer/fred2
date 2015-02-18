@@ -42,12 +42,16 @@ public class RobotMap {
     public static Encoder driveLeftEncoder;
     public static Encoder driveRightEncoder;
     public static Encoder driveHdriveEncoder;
+    public static Solenoid liftBlueLiftLights;
+    public static Solenoid liftRedLiftLights;
+    public static Solenoid liftGreenLiftLights;
     public static SpeedController liftLift;
     public static DigitalInput liftTopLimit;
     public static DigitalInput liftBottomLimit;
     public static SpeedController liftLiftCim;
     public static Encoder liftLiftEncoder;
-    public static Solenoid grabberLight;
+    public static Solenoid grabberPurpleTopLights;
+    public static Solenoid grabberGreenTopLight;
     public static Solenoid grabberToteGripper;
     public static DoubleSolenoid grabberPusher;
 
@@ -94,6 +98,15 @@ public class RobotMap {
         LiveWindow.addSensor("Drive", "HdriveEncoder", driveHdriveEncoder);
         driveHdriveEncoder.setDistancePerPulse(0.05235987755982989);
         driveHdriveEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
+        liftBlueLiftLights = new Solenoid(0, 5);
+        LiveWindow.addActuator("Lift", "BlueLiftLights", liftBlueLiftLights);
+        
+        liftRedLiftLights = new Solenoid(0, 3);
+        LiveWindow.addActuator("Lift", "RedLiftLights", liftRedLiftLights);
+        
+        liftGreenLiftLights = new Solenoid(0, 4);
+        LiveWindow.addActuator("Lift", "GreenLiftLights", liftGreenLiftLights);
+        
         liftLift = new Talon(5);
         LiveWindow.addActuator("Lift", "Lift", (Talon) liftLift);
         
@@ -110,8 +123,11 @@ public class RobotMap {
         LiveWindow.addSensor("Lift", "LiftEncoder", liftLiftEncoder);
         liftLiftEncoder.setDistancePerPulse(0.0114583333333333);
         liftLiftEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
-        grabberLight = new Solenoid(0, 7);
-        LiveWindow.addActuator("Grabber", "Light", grabberLight);
+        grabberPurpleTopLights = new Solenoid(0, 6);
+        LiveWindow.addActuator("Grabber", "PurpleTopLights", grabberPurpleTopLights);
+        
+        grabberGreenTopLight = new Solenoid(0, 7);
+        LiveWindow.addActuator("Grabber", "GreenTopLight", grabberGreenTopLight);
         
         grabberToteGripper = new Solenoid(0, 2);
         LiveWindow.addActuator("Grabber", "ToteGripper", grabberToteGripper);

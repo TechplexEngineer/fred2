@@ -11,6 +11,7 @@
 
 package org.usfirst.frc5122.Fred2.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
@@ -47,6 +48,7 @@ public class auto_2tote_pos1 extends CommandGroup {
     	addSequential(new a_drive_move_dist(14 ,driveSpeed));//bump it
 //    	addSequential(new a_drive_move_dist(7 ,driveSpeed));//bump it
     	addSequential(new a_lift_bottom(liftSpeed));
+    	addSequential(new WaitCommand(.2));
     	addSequential(new a_lift_move_dist(3, liftSpeed)); //lift up
     	//pause here
     	addSequential(new a_drive_move_time(.25, .7));

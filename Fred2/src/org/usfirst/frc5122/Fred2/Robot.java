@@ -85,6 +85,7 @@ public class Robot extends IterativeRobot {
         autoChooser.addObject("auto_1tote_pos1_lm2", new auto_1tote_pos1_lm2());
         autoChooser.addObject("auto_2tote_pos1", new auto_2tote_pos1());
         SmartDashboard.putData("Auto Chooser", autoChooser);
+        
     }
 
     /**
