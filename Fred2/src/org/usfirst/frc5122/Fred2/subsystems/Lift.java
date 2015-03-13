@@ -11,6 +11,7 @@
 
 package org.usfirst.frc5122.Fred2.subsystems;
 
+import org.usfirst.frc5122.Fred2.Robot;
 import org.usfirst.frc5122.Fred2.RobotMap;
 import org.usfirst.frc5122.Fred2.commands.oi_Lift;
 
@@ -79,7 +80,14 @@ public class Lift extends Subsystem {
     	}
 //    	lift.set(speed);
     	liftCim.set(speed);
-    	//if(speed>0){
+    	if(speed>0){
+    		Robot.lights.LiftLights.set(0, 15, 0);
+    	} else if(speed <0){
+    		Robot.lights.LiftLights.set(0, 0, 15);
+    	} else {
+    		Robot.lights.LiftLights.set(15, 0, 0);
+    	}
+ 
     		//greenLiftLights.set(true);
     		//blueLiftLights.set(false);
     		//redLiftLights.set(false);

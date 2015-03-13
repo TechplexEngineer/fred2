@@ -10,6 +10,14 @@ public class U {
 		else 
 			return value;
 	}
+	public static int constrain(int min, int value, int max) {
+		if (value > max)
+			return max;
+		else if (value < min)
+			return min;
+		else 
+			return value;
+	}
 	public static String className(Object c) {
 		Class<?> enclosingClass = c.getClass().getEnclosingClass();
 		if (enclosingClass != null) {
