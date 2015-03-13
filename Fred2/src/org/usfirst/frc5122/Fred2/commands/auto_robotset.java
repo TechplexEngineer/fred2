@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class auo_2tote_pos2 extends CommandGroup {
+public class auto_robotset extends CommandGroup {
     
-    public  auo_2tote_pos2() {
+    public  auto_robotset() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -34,5 +34,12 @@ public class auo_2tote_pos2 extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+    	
+    	double turnspeed = .8;
+    	double driveSpeed = .65;
+    	
+    	addSequential(new a_drive_move_dist(58, driveSpeed));
+    	addSequential(new a_drive_turn_angle(90, turnspeed));
+    	
     }
 }
