@@ -88,6 +88,7 @@ public class Robot extends IterativeRobot {
         autoChooser.addObject("1tote_pos1_lm", new auto_1tote_pos1());
         autoChooser.addObject("1tote_pos1_lm2", new auto_1tote_pos1_lm2());
         autoChooser.addObject("2tote_pos1", new auto_2tote_pos1());
+        autoChooser.addObject("1RC_bump", new auto_1rc_bump());
         SmartDashboard.putData("Auto Chooser", autoChooser);
         
     }
@@ -97,14 +98,18 @@ public class Robot extends IterativeRobot {
      * You can use it to reset subsystems before shutting down.
      */
     public void disabledInit(){
-
+    	Robot.lights.LightBar.set(15, 0, 7);
+    	//Robot.lights.LiftLights.set(15, 0, 7);
     }
 
     public void disabledPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard.putNumber("Gyro", Robot.drive.getGyroAngle());
     }
 
     public void autonomousInit() {
+//    	Robot.lights.LightBar.set(0, 5, 2);
+//    	Robot.lights.LiftLights.set(15, 0, 0);
     	grabbercmd.cancel();
     	autonomousCommand = (Command) autoChooser.getSelected(); //= new auto_3totes();
         // schedule the autonomous command (example)
@@ -115,16 +120,17 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
+    	SmartDashboard.putNumber("Gyro", Robot.drive.getGyroAngle());
         Scheduler.getInstance().run();
     }
 
     public void teleopInit() {
     	grabbercmd.start();
     	
-    	SmartDashboard.putNumber("DriveDistance", 0);
+    	/*SmartDashboard.putNumber("DriveDistance", 0);
     	SmartDashboard.putNumber("TurnAngle",0);
     	SmartDashboard.putNumber("StrafeDist",0);
-    	SmartDashboard.putNumber("MoveLiftDistance",0);
+    	SmartDashboard.putNumber("MoveLiftDistance",0);*/
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
@@ -141,7 +147,7 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putNumber("Gyro", Robot.drive.getGyroAngle());
         Scheduler.getInstance().run();
         double current = RobotMap.pdp.getCurrent(14);
-        SmartDashboard.putNumber("Lift Current",  current);
+        //SmartDashboard.putNumber("Lift Current",  current);
     }
 
     /**

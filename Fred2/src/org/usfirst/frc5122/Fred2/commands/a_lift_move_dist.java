@@ -57,6 +57,7 @@ public class  a_lift_move_dist extends Command {
     // Called once after isFinished returns true
     protected void end() {
     	Robot.lift.stop();
+    	Robot.lift.reset(); //need to reset the encoder to ensure the PID doesn't think we have a huge error!
     }
 
     // Called when another command which requires one or more of the same

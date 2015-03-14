@@ -35,7 +35,7 @@ public class Lights extends Subsystem {
 //		LiftLights = new LightGroup(3,4,5);
 		
 		LiftLights = new LightGroup(0,1,2);
-		LightBar = new LightGroup(3,4,5);
+		LightBar = new LightGroup(5,3,4);
 	}
 
     
