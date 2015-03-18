@@ -62,18 +62,20 @@ public class  oi_Lift extends Command {
     	}
     	else 
     	{
-    		if (! STATE_HOLD) {
-    			Robot.lift.reset();
-    			STATE_HOLD = true;
-    		} else {
-    			double error = Robot.lift.getDistance();
-    			if (Math.abs(error) > 1) {
-    				Robot.lift.moveLift(error * lift_kp);
-    				System.out.println(error * lift_kp);
-    			} else {
-    				Robot.lift.moveLift(0);
-    			}
-    		}
+    		Robot.lift.moveLift(0);
+    		//disable PID
+//    		if (! STATE_HOLD) {
+//    			Robot.lift.reset();
+//    			STATE_HOLD = true;
+//    		} else {
+//    			double error = Robot.lift.getDistance();
+//    			if (Math.abs(error) > 1) {
+//    				Robot.lift.moveLift(error * lift_kp);
+//    				System.out.println(error * lift_kp);
+//    			} else {
+//    				Robot.lift.moveLift(0);
+//    			}
+//    		}
     	}
     	System.out.println(STATE_HOLD);
     	
