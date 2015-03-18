@@ -89,6 +89,7 @@ public class Robot extends IterativeRobot {
         autoChooser.addObject("1tote_pos1_lm2", new auto_1tote_pos1_lm2());
         autoChooser.addObject("2tote_pos1", new auto_2tote_pos1());
         autoChooser.addObject("1RC_bump", new auto_1rc_bump());
+        autoChooser.addObject("1tote_bump", new auto_1tote_bump());
         SmartDashboard.putData("Auto Chooser", autoChooser);
         
     }
@@ -105,6 +106,7 @@ public class Robot extends IterativeRobot {
     public void disabledPeriodic() {
         Scheduler.getInstance().run();
         SmartDashboard.putNumber("Gyro", Robot.drive.getGyroAngle());
+        Robot.lift.reset();
     }
 
     public void autonomousInit() {

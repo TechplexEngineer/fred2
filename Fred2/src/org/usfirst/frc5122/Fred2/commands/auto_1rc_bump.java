@@ -39,8 +39,9 @@ public class auto_1rc_bump extends CommandGroup {
     	double driveSpeed = .65;
     	double liftSpeed = .8;
     	
-    	addParallel(new a_lift_move_dist(26, liftSpeed)); //lift up
-    	addSequential(new a_drive_move_dist(126, driveSpeed));
+    	addSequential(new a_lift_move_dist(26, liftSpeed)); //lift up
+    	addSequential(new a_drive_move_time(2.5, .8), 2.5);
+    			//(156, driveSpeed));
     	addSequential(new a_drive_turn_angle(90, turnspeed));
     }
 }

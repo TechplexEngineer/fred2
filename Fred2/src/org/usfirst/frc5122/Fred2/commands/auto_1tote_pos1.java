@@ -43,10 +43,10 @@ public class auto_1tote_pos1 extends CommandGroup {
     	addSequential(new a_drive_turn_angle(90, turnspeed), 2);
     	addSequential(new a_drive_move_dist(113, driveSpeed), 3.5);
     	addSequential(new a_drive_turn_angle(90, turnspeed), 2);
-    	addSequential(new a_drive_move_dist(41, driveSpeed), 2);
-    	addSequential(new a_lift_bottom());
-    	addSequential(new a_drive_turn_angle(15, turnspeed), 2);
-    	addSequential(new a_drive_move_dist(-90, driveSpeed), 4);
+    	//addSequential(new a_drive_move_dist(41, driveSpeed), 2);
+    	//addSequential(new a_lift_bottom());
+    	//addSequential(new a_drive_turn_angle(15, turnspeed), 2);
+    	addSequential(new a_drive_move_dist(-12, driveSpeed), 4);
 
     }
 }
