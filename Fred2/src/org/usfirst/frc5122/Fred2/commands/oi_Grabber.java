@@ -44,13 +44,13 @@ public class  oi_Grabber extends Command {
     		Robot.grabber.push();
     		Robot.grabber.ungrab();
     	} else {
-    		if (Math.abs(Robot.oi.getXbox().getLeftStickX()) > DEADBAND || Robot.oi.getXbox().isB()) {
+    		if (Math.abs(Robot.oi.getXbox().getRightStickX()) > DEADBAND || Robot.oi.getXbox().isB()) {
         		Robot.grabber.ungrab();
         	} else {
         		Robot.grabber.grab();
         	}
         	
-        	if ((Robot.oi.getXbox().getRightStickY()*-1) > DEADBAND || Robot.oi.getXbox().isA()) {
+        	if ((Robot.oi.getXbox().getLeftStickY()*-1) > DEADBAND || Robot.oi.getXbox().isA()) {
         		Robot.grabber.push();
         	} else {
         		Robot.grabber.unpush();
