@@ -80,9 +80,9 @@ public class Lift extends Subsystem {
     	}
 //    	lift.set(speed);
     	liftCim.set(speed);
-    	if(speed>0){
+    	if(speed > 0){
     		Robot.lights.LiftLights.set(0, 15, 0);
-    	} else if(speed <0){
+    	} else if(speed < 0){
     		Robot.lights.LiftLights.set(0, 0, 15);
     	} else {
     		Robot.lights.LiftLights.set(15, 0, 0);

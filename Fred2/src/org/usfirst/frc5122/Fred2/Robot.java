@@ -102,10 +102,29 @@ public class Robot extends IterativeRobot {
     	Robot.lights.LightBar.set(15, 0, 7);
     	//Robot.lights.LiftLights.set(15, 0, 7);
     }
+    public void alwaysPerodic() {
+    	SmartDashboard.putNumber("Gyro", Robot.drive.getGyroAngle());
+    	SmartDashboard.putNumber("Gyro NavX", Robot.drive.imu.getYaw());
+        SmartDashboard.putBoolean("isConnected", Robot.drive.imu.isConnected());
+        SmartDashboard.putNumber("UpdateCount", Robot.drive.imu.getUpdateCount());
+        SmartDashboard.putBoolean("isCalibrating", Robot.drive.imu.isCalibrating());
+        SmartDashboard.putNumber("FusedHeading", Robot.drive.imu.getFusedHeading());
+        SmartDashboard.putNumber("Rate", Robot.drive.gyro1.getRate());
+        SmartDashboard.putNumber("Gyro Analog", Robot.drive.gyro1.getAngle());
+        
+        SmartDashboard.putNumber("Roll", Robot.drive.imu.getRoll());
+        SmartDashboard.putNumber("Pitch", Robot.drive.imu.getPitch());
+        SmartDashboard.putNumber("Yaw", Robot.drive.imu.getYaw());
+        
+
+        double current = RobotMap.pdp.getCurrent(14);
+        //SmartDashboard.putNumber("Lift Current",  current);
+    }
 
     public void disabledPeriodic() {
         Scheduler.getInstance().run();
-        SmartDashboard.putNumber("Gyro", Robot.drive.getGyroAngle());
+        alwaysPerodic();
+//        SmartDashboard.putNumber("IMU", Robot.drive.getOldGyroAngle());
         Robot.lift.reset();
     }
 
@@ -122,6 +141,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
+    	alwaysPerodic();
     	SmartDashboard.putNumber("Gyro", Robot.drive.getGyroAngle());
         Scheduler.getInstance().run();
     }
@@ -129,10 +149,7 @@ public class Robot extends IterativeRobot {
     public void teleopInit() {
     	grabbercmd.start();
     	
-    	/*SmartDashboard.putNumber("DriveDistance", 0);
-    	SmartDashboard.putNumber("TurnAngle",0);
-    	SmartDashboard.putNumber("StrafeDist",0);
-    	SmartDashboard.putNumber("MoveLiftDistance",0);*/
+    	
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
@@ -144,18 +161,16 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-//    	SmartDashboard.putNumber("Left", Robot.drive.leftDistance());
-//    	SmartDashboard.putNumber("Right", Robot.drive.rightDistance());
-    	SmartDashboard.putNumber("Gyro", Robot.drive.getGyroAngle());
+    	alwaysPerodic();    	
         Scheduler.getInstance().run();
-        double current = RobotMap.pdp.getCurrent(14);
-        //SmartDashboard.putNumber("Lift Current",  current);
+
     }
 
     /**
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
+    	alwaysPerodic();
         LiveWindow.run();
     }
 }

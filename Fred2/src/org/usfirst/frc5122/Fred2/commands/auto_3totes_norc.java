@@ -38,20 +38,30 @@ public class auto_3totes_norc extends CommandGroup {
     	
     	
     	
-    	addParallel(new a_lift_move_dist(14));
+    	addParallel(new a_lift_move_dist(17));
     	addSequential(new WaitCommand("Wait for partners", 2.5));
-    	addSequential(new a_drive_move_dist(83, 0.8));
+    	addSequential(new a_drive_move_dist_straight(90, .75));
+    	addSequential(new a_grabber_ungrab());
+//    	addSequential(new a_drive_move_time_straight(1.5, .8));
+//    	addSequential(new a_drive_move_time_straight(.5, .65));
     	addSequential(new a_lift_bottom());//pickup tote 2
-    	addParallel(new a_lift_move_dist(13)); //lift up
-    	addSequential(new a_drive_move_dist(81, 0.8));
-    	
+    	addSequential(new a_grabber_grab());
+//    	addSequential(new WaitCommand(1));
+    	addSequential(new a_drive_move_time(.25, .8));
+    	addParallel(new a_lift_move_dist(18)); //lift up
+    	addSequential(new a_drive_move_dist_straight(82, .75));
+//    	addSequential(new a_drive_move_time_straight(1.5, .8));
+//    	addSequential(new a_drive_move_time_straight(.5, .65));\
+    	addSequential(new a_grabber_ungrab());
     	addSequential(new a_lift_bottom());//pickup tote 3
+    	addSequential(new a_grabber_grab());
+    	addSequential(new a_drive_move_time(.25, .8));
     	
     	addSequential(new a_drive_turn_angle(55));
     	addParallel(new a_grabber_push());
-    	addSequential(new a_drive_move_dist(120));
+    	addSequential(new a_drive_move_dist_straight(120));
     	
-    	addSequential(new a_drive_move_dist(-10));
+    	addSequential(new a_drive_move_dist_straight(-10));
     	
 
     }

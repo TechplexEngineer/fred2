@@ -43,7 +43,7 @@ public class  oi_Lift extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	System.out.println("EXE");
+
     	if ((Robot.oi.getXbox().getRightTrigger() > DEADBAND)) {
     		Robot.lift.moveLift(-Robot.oi.getXbox().getRightTrigger()*FACTOR_DOWN);
     		STATE_HOLD = false;
@@ -77,7 +77,7 @@ public class  oi_Lift extends Command {
 //    			}
 //    		}
     	}
-    	System.out.println(STATE_HOLD);
+
     	
     	
     }

@@ -26,7 +26,7 @@ public class  a_drive_move_dist extends PIDCommand {
 	private double maxspeed;
 	
 	public a_drive_move_dist(double distance, double p, double i, double d, double max ) {
-		super("a_drive_turn_angle", p, i, d, 0.01);
+		super("a_drive_move_dist", p, i, d, 0.01);
 		this.distance = distance;
 		this.maxspeed = max;
 		getPIDController().setContinuous(false);
