@@ -47,8 +47,10 @@ public class Drive extends Subsystem {
     public Gyro gyro1 = gyro;
     SerialPort serial_port;
     public AHRS imu;			// This class can only be used w/the navX MXP.
+    private static double voltsPerDegreePerSecond = 0.0065;
     
     public Drive() {
+    	gyro.setSensitivity(voltsPerDegreePerSecond);
     	SmartDashboard.putNumber("straight kp", .03);
     	
     	try {
@@ -57,7 +59,7 @@ public class Drive extends Subsystem {
         	// Use SerialPort.Port.kMXP if connecting navX MXP to the RoboRio MXP port
         	// Use SerialPort.Port.kUSB if connecting nav6 or navX MXP to the RoboRio USB port
         		
-        	serial_port = new SerialPort(9600,SerialPort.Port.kUSB);//57600
+        	serial_port = new SerialPort(57600, SerialPort.Port.kUSB);
         	System.out.println("Serial: "+(serial_port==null));
         	
         	// You can add a second parameter to modify the 
@@ -77,7 +79,7 @@ public class Drive extends Subsystem {
         	// access to altitude/barometric pressure data from a
         	// navX MXP Aero.
     		
-    		byte update_rate_hz = 50;
+    		byte update_rate_hz = 60;
     		//imu = new IMU(serial_port,update_rate_hz);
     		//imu = new IMUAdvanced(serial_port,update_rate_hz);
     		imu = new AHRS(serial_port,update_rate_hz);
@@ -130,7 +132,7 @@ public class Drive extends Subsystem {
     //when the robot resets clear the gyro error
     public void resetGyro() {
     	System.out.println("Resetting Gyro");
-//    	gyro.reset();
+    	gyro.reset();
     	try {
     		imu.zeroYaw();
     	} catch (Exception ex) {
@@ -214,6 +216,7 @@ public class Drive extends Subsystem {
     	return rightEncoder.getDistance();
     }
     public double getGyroAngle() {
+    	//return gyro.getAngle();
     	try {
     		return imu.getYaw();
     	} catch (Exception ex) {

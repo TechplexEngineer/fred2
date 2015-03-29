@@ -44,7 +44,7 @@ public class  oi_HDrive extends Command {
     	double throttle = Robot.oi.getDriver().getThrottle();
     	
     	throttle = map(throttle, -1, 1, 1, .25);
-    	double factor = throttle*.8;
+    	double factor = throttle;
     	double drive = Robot.oi.getDriver().getY()*factor;
     	double turn = Robot.oi.getDriver().getZ()*factor*.8;
     	double slide = Robot.oi.getDriver().getX()*factor;

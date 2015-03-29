@@ -978,6 +978,12 @@ Children:
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: a_drive_move_time_straight
+  - Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: false}
+    Base: Command Group
+    Name: auto_liftup_2
   Properties: {}
   Base: Commands
   Name: Commands

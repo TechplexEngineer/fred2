@@ -15,9 +15,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class auto_1tote_bump extends CommandGroup {
+public class auto_liftup_2 extends CommandGroup {
     
-    public  auto_1tote_bump() {
+    public  auto_liftup_2() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -34,15 +34,8 @@ public class auto_1tote_bump extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	
-    	double turnspeed = .8;
-    	double driveSpeed = .65;
     	double liftSpeed = .8;
-    	
-    	addSequential(new a_lift_move_dist(13, liftSpeed)); //lift up
-    	addSequential(new a_drive_turn_angle(90, turnspeed), 1.5);
-    	addSequential(new a_drive_move_time(2.5, .8), 2.5);
-    			//(156, driveSpeed));
-    	addSequential(new a_drive_turn_angle(90, turnspeed));
+    	addSequential(new a_lift_move_dist(12, liftSpeed)); //lift up
+    	addSequential(new a_drive_turn_angle(35, .8));
     }
 }

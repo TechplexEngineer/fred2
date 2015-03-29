@@ -40,8 +40,9 @@ public class auto_2tote_pos1 extends CommandGroup {
     	double driveSpeed = .8;
     	double liftSpeed = .6;
     	addParallel(new a_lift_move_dist(1.5, liftSpeed)); //lift up
-    	addSequential(new a_drive_move_dist(-12, driveSpeed));
-    	addSequential(new a_drive_turn_angle(220, .65), 3);
+    	addSequential(new a_drive_move_dist(-12, .078, 0.001, .6, .8));
+    			//-12, driveSpeed+.1));
+    	addSequential(new a_drive_turn_angle(230, .65), 3);
     	addSequential(new a_drive_turn_angle(-30, .65), 1);
     	addSequential(new a_lift_move_dist(13, liftSpeed)); //lift up
     	addSequential(new a_drive_move_dist(32 ,.9)); //get close
