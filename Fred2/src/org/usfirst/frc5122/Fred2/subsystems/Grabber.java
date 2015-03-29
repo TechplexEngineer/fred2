@@ -72,8 +72,10 @@ public class Grabber extends Subsystem {
 //    		purpleTopLights.set(!light);
     	if (light) {
     		Robot.lights.LightBar.set(0, 15, 0);
+    		Robot.lights.LiftLights.set(0, 15, 0);
     	} else {
     		Robot.lights.LightBar.set(15, 0, 15);
+    		Robot.lights.LiftLights.set(15, 0, 0);
     	}
     }
     

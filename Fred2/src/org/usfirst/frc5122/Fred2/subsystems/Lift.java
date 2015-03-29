@@ -73,20 +73,21 @@ public class Lift extends Subsystem {
     		go(speed);
     	}
     }
-    //UNSAFE METHOD, DOES NOT CHECK LIMIT SWITCHES!
+    //UNSAFE METHOD, DOES NOT CHECK LIMIT SWITCHES!  -- DO NOT USE
     private void go(double speed) {
     	if (Math.abs(speed) < .4 && speed != 0) {
     		speed = (speed/Math.abs(speed))*.4;
     	}
 //    	lift.set(speed);
     	liftCim.set(speed);
-    	if(speed > 0){
-    		Robot.lights.LiftLights.set(0, 15, 0);
-    	} else if(speed < 0){
-    		Robot.lights.LiftLights.set(0, 0, 15);
-    	} else {
-    		Robot.lights.LiftLights.set(15, 0, 0);
-    	}
+    	
+//    	if(speed > 0){
+//    		Robot.lights.LiftLights.set(0, 15, 0);
+//    	} else if(speed < 0){
+//    		Robot.lights.LiftLights.set(15, 0, 0);
+//    	} else {
+//    		Robot.lights.LiftLights.set(0, 0, 15);
+//    	}
  
     		//greenLiftLights.set(true);
     		//blueLiftLights.set(false);

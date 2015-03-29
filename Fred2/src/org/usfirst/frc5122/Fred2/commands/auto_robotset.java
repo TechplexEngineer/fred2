@@ -36,10 +36,11 @@ public class auto_robotset extends CommandGroup {
         // arm.
     	
     	double turnspeed = .8;
-    	double driveSpeed = .65;
+    	double driveSpeed = .8;
     	
-    	addSequential(new a_drive_move_dist(58, driveSpeed));
-    	addSequential(new a_drive_turn_angle(90, turnspeed));
+    	addSequential(new a_drive_move_dist(58, driveSpeed), 2.5);
+//    	addSequential(new a_drive_move_dist(58, .078, 0, .6, driveSpeed));
+    	addSequential(new a_drive_turn_angle(90, turnspeed), 1.5);
     	
     }
 }
