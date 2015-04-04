@@ -83,7 +83,11 @@ public class OI {
 
 	    
         // SmartDashboard Buttons
+        SmartDashboard.putData("a_lift_top", new a_lift_top());
+
         SmartDashboard.putData("oi_containerUprighter", new oi_containerUprighter());
+
+        SmartDashboard.putData("oi_Stabilizer", new oi_Stabilizer());
 
         SmartDashboard.putData("b_zero_yaw", new b_zero_yaw());
 

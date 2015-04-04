@@ -227,6 +227,7 @@ public class Drive extends Subsystem {
     
     //we'll backup the NavX with the analog Gyro
     public double getGyroAngle() {
+//    	System.out.println("Get Gyro Angle");
     	try {
     		if (imu.isConnected() && !imu.isCalibrating())
     		{
