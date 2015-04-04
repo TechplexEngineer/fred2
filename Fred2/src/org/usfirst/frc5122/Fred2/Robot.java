@@ -120,6 +120,8 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putNumber("Yaw", Robot.drive.imu.getYaw());
         SmartDashboard.putBoolean("GrabberLimit", Robot.canGrabber.isAtTop());
         
+        SmartDashboard.putNumber("leftEndoder", Robot.drive.leftDistance());
+        
 
         double current = RobotMap.pdp.getCurrent(14);
         //SmartDashboard.putNumber("Lift Current",  current);
