@@ -24,10 +24,12 @@ public class auto_canGraabber extends CommandGroup {
         //      addSequential(new Command2());
         // these will run in order.
     	addParallel(new a_cangrabber_deploy());
-    	addSequential(new a_drive_move_time(0.35,-0.8));
+    	addSequential(new a_drive_move_time(0.4,-0.8));
     	addSequential(new WaitForChildren());
-    	addParallel(new a_cangrabber_retract(), 1);
-    	addSequential(new a_drive_move_dist(72, 0.9));
+    	addSequential(new a_drive_move_time(1.5, .9));
+    	addParallel(new a_cangrabber_retract());
+//    	addSequential(new a_drive_move_time(0.125, 0.8));
+//    	addSequential(new a_drive_move_dist(12, 0.9));
     	
     	
         // To run multiple commands at the same time,

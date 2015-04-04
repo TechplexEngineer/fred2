@@ -43,11 +43,12 @@ public class auto_3tote_rc extends CommandGroup {
     	addSequential(new a_lift_bottom());
     	addSequential(new a_drive_move_time(.125, .85)); //bump
 //    	addSequential(new WaitCommand(.125));
-    	addSequential(new oi_Stabilizer()); //open
+    	addParallel(new oi_Stabilizer()); //open
     	addSequential(new a_lift_top());
     	addSequential(new oi_Stabilizer()); //close
+    	addParallel(new a_lift_move_dist(-27));
     	addSequential(new a_drive_turn_lisa());
-    	addSequential(new WaitCommand(1.25));
+    	addSequential(new WaitCommand(1));
     	addSequential(new a_drive_move_dist_straight(60, drive_speed));
     	addSequential(new a_drive_move_time(.25, .9)); //bump
     	addSequential(new a_lift_bottom());

@@ -18,7 +18,7 @@ import org.usfirst.frc5122.Fred2.Robot;
  *
  */
 public class  a_cangrabber_deploy extends Command {
-	private final double DEPLOY_TIME = 3;
+	private final double DEPLOY_TIME = 1.5;
     public a_cangrabber_deploy() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
