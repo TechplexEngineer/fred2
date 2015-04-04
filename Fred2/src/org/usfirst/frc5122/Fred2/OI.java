@@ -56,6 +56,7 @@ public class OI {
     public JoystickButton stabilizer;
     public JoystickButton canGrabberUp;
     public JoystickButton canGrabberDown;
+    public JoystickButton canGrabbersRetract;
     public Joystick driver;
     public Joystick aux;
 
@@ -69,6 +70,8 @@ public class OI {
         
         driver = new Joystick(0);
         
+        canGrabbersRetract = new JoystickButton(driver, 2);
+        canGrabbersRetract.whenPressed(new a_cangrabber_retract());
         canGrabberDown = new JoystickButton(driver, 9);
         canGrabberDown.whileHeld(new oi_cangrabber_down());
         canGrabberUp = new JoystickButton(driver, 10);

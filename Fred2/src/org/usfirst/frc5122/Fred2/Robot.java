@@ -14,7 +14,6 @@ package org.usfirst.frc5122.Fred2;
 import org.usfirst.frc5122.Fred2.commands.*;
 import org.usfirst.frc5122.Fred2.subsystems.*;
 
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;

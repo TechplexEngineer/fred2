@@ -25,6 +25,11 @@ public class  a_drive_move_dist_straight extends PIDCommand {
 	private double distance;
 	private double maxspeed;
 	
+	public final static double kp = 0.078;
+	public final static double ki = 0;
+	public final static double kd = 0.6;
+	public final static double max = 0.8;
+	
 	public a_drive_move_dist_straight(double distance, double p, double i, double d, double max ) {
 		super("a_drive_move_dist_straight", p, i, d, 0.01);
 		this.distance = distance;
@@ -39,10 +44,10 @@ public class  a_drive_move_dist_straight extends PIDCommand {
 	}
     
     public a_drive_move_dist_straight(double distance, double maxspeed) {
-    	this(distance, .078, 0, .6, maxspeed);
+    	this(distance, kp, ki, kd, maxspeed);
     }
     public a_drive_move_dist_straight(double distance) {
-    	this(distance, .8);
+    	this(distance, max);
     }
     
 

@@ -24,7 +24,7 @@ public class auto_canGraabber extends CommandGroup {
         //      addSequential(new Command2());
         // these will run in order.
     	addParallel(new a_cangrabber_deploy());
-    	addSequential(new a_drive_move_time(0.3,-0.8));
+    	addSequential(new a_drive_move_time(0.35,-0.8));
     	addSequential(new WaitForChildren());
     	addParallel(new a_cangrabber_retract(), 1);
     	addSequential(new a_drive_move_dist(72, 0.9));
