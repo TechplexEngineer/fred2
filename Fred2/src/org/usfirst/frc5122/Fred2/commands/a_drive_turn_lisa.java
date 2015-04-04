@@ -33,26 +33,26 @@ public class  a_drive_turn_lisa extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.drive.resetLeftDistance();
-    	System.out.println("Staring Lisa's Code");
+//    	System.out.println("Staring Lisa's Code");
     	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drive.HDrive(0, 1, 0);
+    	Robot.drive.HDrive(0, .9, 0);
     	System.out.println("EXE");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	System.out.println(" "+Robot.drive.leftEnc.get()+" "+(Robot.drive.leftEnc.get() >= 1050));
-        return Robot.drive.leftEnc.get() >= 750;
+//    	System.out.println(" "+Robot.drive.leftEnc.get()+" "+(Robot.drive.leftEnc.get() >= 1050));
+        return Robot.drive.leftEnc.get() >= 705;
     }
 
     // Called once after isFinished returns true
     protected void end() {
     	Robot.drive.stop();
-    	System.out.println("DONE");
+//    	System.out.println("DONE");
     }
 
     // Called when another command which requires one or more of the same
